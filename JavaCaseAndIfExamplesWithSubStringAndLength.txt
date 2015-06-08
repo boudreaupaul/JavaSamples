@@ -1,0 +1,42 @@
+
+// Trim out all spaces from iInvdate
+        iInvdate = iInvdate.trim();
+        
+
+// check that the string has a period '.' in it (it will be -1 if it doesn't) and set iInvdateDecimals to the portion of the string which contains the period '.' and all characters after       
+        if (iInvdate.indexOf(".") != -1){
+            iInvdateDecimals = iInvdate.substring (iInvdate.indexOf("."),iInvdate.length());}
+        else {
+            iInvdateDecimals = "";}
+
+// use the switch case to fix the number of decimals to 2 places regardless of how many decimals are coming in        
+        switch (iInvdateDecimals.length()){
+            case 0:
+            oIVDT = iInvdate + ".00";
+            break;
+            case 1:
+            oIVDT = iInvdate + "00";
+            break;
+            case 2:
+            oIVDT = iInvdate + "0";
+            break;
+            case 3:
+            oIVDT = iInvdate;
+            break;
+            default:
+            oIVDT = iInvdate.substring (0,iInvdate.indexOf(".")+3);
+            break;
+        }
+                
+		/* example of how to do the above switch case with the if statement 
+        
+        if (iInvdateDecimals.length() == 0){
+				oIVDT = iInvdate + ".00";
+        } else if (iInvdateDecimals.length() == 1) {
+            oIVDT = iInvdate + "00";
+        } else if (iInvdateDecimals.length() == 2) {
+            oIVDT = iInvdate + "0";
+		} else if (iInvdateDecimals.length() > 3) {
+				oIVDT = iInvdate.substring (0,iInvdate.indexOf(".")+3);
+        } else {
+            oIVDT = iInvdate;}*/
