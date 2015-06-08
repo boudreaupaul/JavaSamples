@@ -1,0 +1,31 @@
+import java.io.*;
+
+public class Test{
+   public static void main(String args[]){
+      String Str = new String("Welcome to Tutorialspoint.com");
+
+      System.out.print("Return Value :" );
+      System.out.println(Str.substring(10) );
+
+      System.out.print("Return Value :" );
+      System.out.println(Str.substring(10, 15) );
+   }
+}
+
+	/**
+	 * Issue Date
+	 */
+	private void issueDate() throws Throwable {
+		
+if (IssueDate == null) IssueDate = "";
+// CCYY-MM-DD -> YYMMDD
+IssueDate = IssueDate.trim ();
+if (IssueDate.length () == 10)
+{
+	String YY = IssueDate.substring (2,4);
+	String MM = IssueDate.substring (5,7);
+	String DD = IssueDate.substring (8,10);
+	CUDT = YY;
+	CUDT = CUDT + MM;
+	CUDT = CUDT + DD;
+}
